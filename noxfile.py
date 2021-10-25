@@ -65,11 +65,18 @@ def safety(session):
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")
 
 
+# @nox.session(python=["3.8", "3.7"])
+# def tests(session):
+#     args = session.posargs or ["--cov", "-m", "not e2e"]
+#     session.run("poetry", "install", "--no-dev", external=True)
+#     install_with_constraints(
+#         session, "coverage[toml]", "pytest", "pytest-cov", "pytest-mock"
+#     )
+#     session.run("pytest", *args)
+
+
 @nox.session(python=["3.8", "3.7"])
 def tests(session):
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    session.run("poetry", "install", "--no-dev", external=True)
-    install_with_constraints(
-        session, "coverage[toml]", "pytest", "pytest-cov", "pytest-mock"
-    )
+    session.run("poetry", "install", external=True)
     session.run("pytest", *args)
