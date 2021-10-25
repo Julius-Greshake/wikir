@@ -24,6 +24,8 @@ flake8-black = "^0.2.3"
 flake8-bugbear = "^21.9.2"
 flake8-import-order = "^0.18.1"
 safety = "^1.10.3"
+mypy = "^0.910"
+pytype = {version = "^2021.10.25", python = "3.8,3.7"}
 
 [tool.coverage.paths]
 # the below line was in the tutorial but included the test files themselves
