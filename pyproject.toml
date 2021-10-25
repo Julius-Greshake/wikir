@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "wikir"
+version = "0.1.0"
+description = "Extract a random wiki article"
+authors = ["Julius Greshake <juliusgreshake@gmail.com>"]
+
+[tool.poetry.scripts]
+wikir = "wikir.console:main"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^8.0.3"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+coverage = {version = "^6.0.2", extras = ["toml"]}
+pytest-cov = "^3.0.0"
+pytest-mock = "^3.6.1"
+black = "^21.9b0"
+flake8 = "^4.0.1"
+flake8-bandit = "^2.1.2"
+flake8-black = "^0.2.3"
+flake8-bugbear = "^21.9.2"
+flake8-import-order = "^0.18.1"
+safety = "^1.10.3"
+
+[tool.coverage.paths]
+# the below line was in the tutorial but included the test files themselves
+source = ["src", "*/site-packages"]
+# this line produces equivalent output to the tutorial
+# source = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["wikir"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
