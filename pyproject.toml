@@ -11,6 +11,9 @@ wikir = "wikir.console:main"
 python = "^3.7"
 click = "^8.0.3"
 requests = "^2.26.0"
+types-requests = "^2.25.11"
+desert = "^2020.11.18"
+marshmallow = "^3.14.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -25,7 +28,7 @@ flake8-bugbear = "^21.9.2"
 flake8-import-order = "^0.18.1"
 safety = "^1.10.3"
 mypy = "^0.910"
-pytype = {version = "^2021.10.25", python = "3.8,3.7"}
+# pytype = {version = "^2021.10.25", python = "3.8,3.7"}
 
 [tool.coverage.paths]
 # the below line was in the tutorial but included the test files themselves
