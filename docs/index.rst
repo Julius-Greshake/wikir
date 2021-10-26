@@ -6,6 +6,7 @@ The wikir project
    :maxdepth: 1
 
    license
+   reference
 
 The example project for the
 `Hypermodern Python <https://cjolowicz.github.io/posts/hypermodern-python-01-setup>`_

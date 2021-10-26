@@ -35,6 +35,7 @@ flake8-docstrings = "^1.6.0"
 darglint = "^1.8.1"
 xdoctest = "^0.15.10"
 Sphinx = "^4.2.0"
+sphinx-autodoc-typehints = "^1.12.0"
 
 [tool.coverage.paths]
 # the below line was in the tutorial but included the test files themselves
