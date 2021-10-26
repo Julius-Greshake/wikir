@@ -1,3 +1,4 @@
+"""Command-line interface."""
 import textwrap
 
 import click
@@ -16,7 +17,7 @@ from . import __version__, wikipedia
 )
 @click.version_option(version=__version__)
 def main(language: str) -> None:
-    """A random wikipedia page."""
+    """Print a random wikipedia page to the console."""
     page = wikipedia.random_page(language=language)
 
     click.secho(page.title, fg="green")
