@@ -5,6 +5,7 @@ import nox
 
 locations = "src", "tests", "noxfile.py"
 nox.options.sessions = "lint", "mypy", "safety", "tests"
+package = "wikir"
 
 
 def install_with_constraints(session, *args, **kwargs):
@@ -80,3 +81,10 @@ def tests(session):
     args = session.posargs or ["--cov", "-m", "not e2e"]
     session.run("poetry", "install", external=True)
     session.run("pytest", *args)
+
+
+@nox.session(python=["3.8", "3.7"])
+def typeguard(session):
+    args = session.posargs or ["-m", "not e2e"]
+    session.run("poetry", "install", external=True)
+    session.run("pytest", f"--typeguard-packages={package}", *args)

@@ -29,6 +29,8 @@ flake8-import-order = "^0.18.1"
 safety = "^1.10.3"
 mypy = "^0.910"
 # pytype = {version = "^2021.10.25", python = "3.8,3.7"}
+typeguard = "^2.13.0"
+flake8-annotations = "^2.7.0"
 
 [tool.coverage.paths]
 # the below line was in the tutorial but included the test files themselves
