@@ -101,3 +101,11 @@ def typeguard(session: Session) -> None:
     args = session.posargs or ["-m", "not e2e"]
     session.run("poetry", "install", external=True)
     session.run("pytest", f"--typeguard-packages={package}", *args)
+
+
+@nox.session(python=["3.8", "3.7"])
+def xdoctest(session: Session) -> None:
+    """Run docstring examples with xdoctest."""
+    args = session.posargs or ["all"]
+    session.run("poetry", "install", external=True)
+    session.run("python", "-m", "xdoctest", package, *args)
