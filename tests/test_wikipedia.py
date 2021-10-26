@@ -7,7 +7,7 @@ import pytest
 from wikir import wikipedia
 
 
-def test_random_page_usses_given_language(mock_requests_get: Mock) -> None:
+def test_random_page_uses_given_language(mock_requests_get: Mock) -> None:
     """It selects the specified Wikipedia language edition."""
     wikipedia.random_page(language="de")
     args, _ = mock_requests_get.call_args

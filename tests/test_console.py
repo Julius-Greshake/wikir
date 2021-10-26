@@ -46,7 +46,7 @@ def test_main_uses_specified_language(
 def test_main_succeeds(runner: CliRunner, mock_requests_get: Mock) -> None:
     """It exits with a status code of zero."""
     result = runner.invoke(console.main)
-    assert "Lorem Ipsum" in result.output
+    assert result.exit_code == 0
 
 
 def test_main_fails_on_request_Error(
@@ -56,6 +56,12 @@ def test_main_fails_on_request_Error(
     mock_requests_get.side_effect = Exception("Boom")
     result = runner.invoke(console.main)
     assert result.exit_code == 1
+
+
+def test_main_prints_title(runner: CliRunner, mock_requests_get: Mock) -> None:
+    """It prints the title of the Wikipedia page."""
+    result = runner.invoke(console.main)
+    assert "Lorem Ipsum" in result.output
 
 
 def test_main_prints_message_on_request_error(
