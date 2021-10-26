@@ -6,7 +6,7 @@ import nox
 from nox.sessions import Session
 
 
-locations = "src", "tests", "noxfile.py"
+locations = "src", "tests", "noxfile.py", "docs/conf.py"
 nox.options.sessions = "lint", "mypy", "safety", "tests"
 package = "wikir"
 
@@ -109,3 +109,10 @@ def xdoctest(session: Session) -> None:
     args = session.posargs or ["all"]
     session.run("poetry", "install", external=True)
     session.run("python", "-m", "xdoctest", package, *args)
+
+
+@nox.session(python="3.8")
+def docs(session: Session) -> None:
+    """Build the documentation."""
+    install_with_constraints(session, "sphinx")
+    session.run("sphinx-build", "docs", "docs/_build")
