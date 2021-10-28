@@ -3,6 +3,7 @@ name = "wikir"
 version = "0.1.0"
 description = "Extract a random wiki article"
 authors = ["Julius Greshake <juliusgreshake@gmail.com>"]
+documentation = "https://wikir.readthedocs.io"
 
 [tool.poetry.scripts]
 wikir = "wikir.console:main"
