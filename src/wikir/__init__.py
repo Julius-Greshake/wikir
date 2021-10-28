@@ -1,7 +1,7 @@
 """Print a random wikipedia page to the console."""
 try:
-    from importlib.metadat import version, PackageNotFoundError  # type: ignore
-except ImportError:  # pgrama: no cov er
+    from importlib.metadata import version, PackageNotFoundError  # type: ignore
+except ImportError:  # pragma: no cover
     from importlib_metadata import version, PackageNotFoundError  # type: ignore
 
 
